@@ -3,11 +3,16 @@
 
 public class Task1 {
     public static void main(String[] args) {
-        float[] mas1 = {76.3f, 42.6f, 1.1f, 8.12f, 88.9f};
-        int k = 0;
-        for (int i=0; i < mas1.length; i++){
-            if (k == i % 2) {mas1[i]+=(mas1[i]/100*20);}
-            System.out.print(mas1[i]+ "\t");
-        }
+        double [] numbers = {20.1f,30,25,28.9f,0.5f,100,57.9f,23.789f,48,-7,-85,-345};//задаём массив
+        for(int i = 0; i < numbers.length; i=i+1){
+        double x = numbers[i];}// при i-ом (четном) значении индекса из массива
+        for(double x : numbers){ // для всех х входящие в массив вывести:
+        if (x == 0){   // не четные уберем с глаз
+        continue;}     // не четные уберем с глаз
+        if (x % 2==0){// условие четности значений в массиве
+        System.out.println(Math.abs(x)+" увеличение на 20 % = "+ Math.abs(x* 1.2 ));} //все четных х  входящие в массив
+ // вывести на экран + вывести увеличение на 20 %
+         }
     }
+
 }

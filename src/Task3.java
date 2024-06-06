@@ -8,24 +8,66 @@
 import java.util.Scanner;
 
 public class Task3 {
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        String s2;
+    public static void main() {
 
         while (true) {
-            System.out.print("Input string: ");
-            String s = scan.nextLine();
+            System.out.print("Введите слово с нечетным количеством букв: ");
+            Scanner sc = new Scanner(System.in);
+            String word = sc.nextLine();
+            if (word.length() < 3) {
+                System.out.println("Минимальное количество букв в слове должно быть равно 3. ");
 
-            if (s.length() < 3) {
-                System.out.println("Minimum length - 3! Try again.");
-            } else if (s.length() % 2 == 0) {
-                System.out.println("Length is even! Try again");
+                String answer;
+                boolean yn;
+
+                System.out.println("You want to continue : (y/n) ");
+                while (true) {
+                  answer = sc.nextLine().trim().toLowerCase();
+                  if (answer.equals("y")) {
+                    yn = true;
+                    System.out.println("Повторяем ввод слова ");
+                    break;
+                  } else if (answer.equals("n")) {
+                    yn = false;
+                    System.out.println("Завершаем программу ");
+                    System.exit(0);;
+                  } else {
+                     System.out.println("Вы допустили ошибку при выборе. Пожалуйста, введите y или n");
+                  }
+                }
+
+            } else if (word.length() % 2 == 0) {
+                System.out.println("Количество букв в слове должно быть нечетным." +
+                         "Введите N - завершить программу или Y, чтобы ввести новое слово");
+                String answer;
+                boolean yn;
+
+                System.out.println("You want to continue : (y/n) ");
+                while (true) {
+                  answer = sc.nextLine().trim().toLowerCase();
+                  if (answer.equals("y")) {
+                    yn = true;
+                    System.out.println("Повторяем ввод слова ");
+                    break;
+                  } else if (answer.equals("n")) {
+                    yn = false;
+                    System.out.println("Завершаем программу ");
+                    System.exit(0);;
+                  } else {
+                     System.out.println("Вы допустили ошибку при выборе. Пожалуйста, введите y или n");
+                  }
+                }
+
             } else {
-                int n = (s.length() + 1) / 2;
-                s2 = s.substring((n - 2), n + 1);
-                System.out.println(s2);
-                break;
+                    String word2;
+                    int n = (word.length() + 1) / 2;
+                    word2 = word.substring(n - 2, n + 1);
+                    System.out.println(word2);}
+
+
+
             }
         }
     }
-}
+
+

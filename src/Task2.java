@@ -2,12 +2,33 @@
 //«-ой-» с последующим выводом количества произведенных замен.
 
 public class Task2 {
+    public static void main() {
+    String decision = "";
 
-    public static void main(String[] args) {
-        String str1 = "Если сделал ляп или даже два. Этот ляп только твой ляп не ляп.";
-        String zamStr = str1.replace("ляп", "-ой-");
-        int replace = (zamStr.length() - zamStr.replace("-ой-", "").length()) / 4;
-        System.out.println(zamStr);
-        System.out.println("Кол-во замен: " + replace);
+    String text = """
+            Знают нынче знал и раб
+            Есть такое слово ляп
+            Взят язык не пущен ляп
+            И идёт ляп сжимая ляп
+            Видел умный и простак
+            Очень просто сделать ляп
+            Шёл ребёнок чап чап чап
+            В травку ляп завалился ляп
+            Газ водитель давит в пол
+            Дождь недавно здесь прошёл""";//вводим текст
+
+        String [] words = text.split(",");//рассортировываем текст на слова через пробел
+        {
+        words[0]=words[0].replaceAll("ляп","-ой-");//производим замену элемента в массиве
+        }
+        for (String x : words) {
+            decision += x ;//производим переборку слов в тексте
+        int number_of_substitutions = (text.length() - text.replace("ляп", "-ой-").length());//считаем кол-во замен
+
+            System.out.println(decision );
+            System.out.println("Количество замен = " + Math.abs(number_of_substitutions));
+        }
     }
 }
+
+
